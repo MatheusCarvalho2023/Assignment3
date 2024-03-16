@@ -64,30 +64,31 @@ namespace A3SantosMShahD
             Console.WriteLine();
 
             // Declare variables
-            int startingNumber, result;
+            int startingNumber, currentNumber, result;
 
             // Get user input
             Console.Write("Enter the starting number: ");
             startingNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Below, we have the multiplication of 10 sequential numbers starting from {startingNumber}:");
+            Console.WriteLine($"Below, we have the multiplication of 10 sequential numbers starting with the number after {startingNumber}:");
 
-            // Verify if number is even or odd, and display the results of each calculation to the user
-            for (int i = 0; i < 10; i++)
+            // Iterate over the next 10 sequential numbers and perform the required calculations
+            for (int i = 1; i < 11; i++)
             {
-                if (startingNumber % 2 == 0)
+                currentNumber = startingNumber + i;
+                // Check if the currentNumber is even or odd
+                if (currentNumber % 2 == 0)
                 {
-                    result = startingNumber * 3;
-                    Console.WriteLine($"{startingNumber} * 3 = {result}");
-                    startingNumber++;
+                    // If even, multiply by 3
+                    result = currentNumber * 3;
+                    Console.WriteLine($"{currentNumber} * 3 = {result}");                   
                 }
                 else
                 {
-                    result = startingNumber * 2;
-                    Console.WriteLine($"{startingNumber} * 2 = {result}");
-                    startingNumber++;
+                    // If odd, multiply by 2
+                    result = currentNumber * 2;
+                    Console.WriteLine($"{currentNumber} * 2 = {result}");
                 }
             }
-
             Console.WriteLine("Note: Odd numbers are multiplied by 2, and Even numbers are multiplied by 3.\n");
         }
 
